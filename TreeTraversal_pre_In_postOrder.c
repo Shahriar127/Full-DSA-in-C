@@ -33,7 +33,7 @@ void postorderTraversal(struct node* root) {
 }
 
 // Create a new Node
-struct node* createNode(value) {
+struct node* createNode(int value) {
   struct node* newNode = malloc(sizeof(struct node));
   newNode->item = value;
   newNode->left = NULL;
