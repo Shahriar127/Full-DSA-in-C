@@ -63,28 +63,28 @@ void insert(struct MinHeap* minHeap, int value) {
     }
 }
 
-// Function to extract the minimum element from the min heap
+
 int extractMin(struct MinHeap* minHeap) {
     if (minHeap->size <= 0)
-        return -1; // If heap is empty
+        return -1; 
 
     if (minHeap->size == 1) {
         minHeap->size--;
         return minHeap->array[0];
     }
 
-    // Store the minimum value and remove it from the heap
+    
     int root = minHeap->array[0];
     minHeap->array[0] = minHeap->array[minHeap->size - 1];
     minHeap->size--;
 
-    // Fix the min heap property
+    
     minHeapify(minHeap, 0);
 
     return root;
 }
 
-// Function to print the elements of the min heap
+
 void printMinHeap(struct MinHeap* minHeap) {
     printf("Min Heap elements: ");
     for (int i = 0; i < minHeap->size; ++i)
@@ -93,10 +93,10 @@ void printMinHeap(struct MinHeap* minHeap) {
 }
 
 int main() {
-    // Create a min heap
+   
     struct MinHeap* minHeap = createMinHeap(MAX_HEAP_SIZE);
 
-    // Insert elements into the min heap
+   
     insert(minHeap, 3);
     insert(minHeap, 2);
     insert(minHeap, 1);
